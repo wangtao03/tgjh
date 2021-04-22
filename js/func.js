@@ -87,13 +87,13 @@ function showWarnning(text) {
 /** 执行查询 */
 function query() {
   var request = GetRequest();
-  var t = parseInt(request["t"]);
-  var n = parseInt(request["n"]);
+  var t = request["t"];
+  var n = request["n"];
   if (t != undefined && n != undefined) {
     Bmob.initialize("a8ed8f0519ef553d", "^oEQjE");
     const query = Bmob.Query('dc_cars');
-    query.equalTo("TID", "==", t);
-    query.equalTo("PID", "==", n);
+    query.equalTo("TID", "==", parseInt(t));
+    query.equalTo("PID", "==", parseInt(n));
     query.find().then(res => {
       if (res !== undefined) {
         document.getElementById('warn').hidden=true;
