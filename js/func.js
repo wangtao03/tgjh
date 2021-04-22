@@ -43,6 +43,7 @@ function getDateTime() {
 }
 /*格式化时间*/
 function dateFormat(d, fmt) {
+  d.toString().replace("-","/");
   var date = new Date(d);
   var o = {
     "M+": date.getMonth() + 1,                 //月份 
