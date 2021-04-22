@@ -43,8 +43,7 @@ function getDateTime() {
 }
 /*格式化时间*/
 function dateFormat(d, fmt) {
-  var nd = d.toString().replace(/-/g, '/');
-  var date = new Date(nd.toString());
+  var date = new Date(d.toString().replace(/-/g, '/'));
   var o = {
     "M+": date.getMonth() + 1,                 //月份 
     "d+": date.getDate(),                    //日 
